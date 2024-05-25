@@ -19,3 +19,11 @@ AC : https://www.acmicpc.net/problem/5430
 뱀과 사다리 게임 : https://www.acmicpc.net/problem/16928
 
 쉬운 최단거리 : https://www.acmicpc.net/problem/14940
+
+---
+### 4주차
+
+색종이 : https://www.acmicpc.net/problem/2563
+
+자리합 : https://www.acmicpc.net/problem/5425
+
