@@ -30,12 +30,44 @@ for i in info:
     nx = x + dx[i]
     ny = y + dy[i]
 
-    if graph[nx][ny] != 0:
-        sol += 1
-    graph[nx][ny] = graph[x][y] + 1
+    graph[nx][ny] = 1
+
+    nx = x + dx[i] * 2
+    ny = y + dy[i] * 2
+
+    graph[nx][ny] = 1
     
     x = nx
     y = ny
+
+
+def bfs(x, y):
+    queue = deque()
+    queue.append((x, y))
+    graph[x][y] = 1
+
+    while queue:
+        x, y = queue.popleft()
+
+        for i in range(4):
+            nx = x + dx[i]
+            ny = y + dy[i]
+
+            if nx < 0 or nx >= 2 * N or ny < 0 or ny >= 2 * N:
+                continue
+
+            if graph[nx][ny] == 0:
+                queue.append((nx, ny))
+                graph[nx][ny] = 1
+
+
+bfs(0, 0)
+
+for i in range(2 * N):
+    for j in range(2 * N):
+        if graph[i][j] == 0:
+            bfs(i, j)
+            sol += 1        
              
 # 출력
 print(sol)
